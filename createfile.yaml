@@ -1,0 +1,9 @@
+---
+- hosts: all
+  become: true
+  tasks:
+   - name: create file
+     file:
+       path: /home/ansible/DevOps
+       state: touch
+       mode: 0775

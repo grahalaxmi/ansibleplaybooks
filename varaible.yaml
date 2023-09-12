@@ -2,7 +2,7 @@
 - hosts: 192.168.56.2
   become: true
   vars:
-    companyname: tcs
+    company: tcs
     person: admin
     phone: 999999989
   tasks:

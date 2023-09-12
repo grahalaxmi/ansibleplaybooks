@@ -1,0 +1,19 @@
+---
+- hosts: 192.168.56.2
+  become: true
+  vars:
+    companyname: tcs
+    person: admin
+    phone: 999999989
+  tasks:
+   - name: install httpd
+     yum: name=httpd state=present
+   - name: start service
+     service:
+       name: httpd
+       state: restarted
+   - name: copy files
+     template:
+       src: index.html
+       dest: /var/www/html/index.html
+  

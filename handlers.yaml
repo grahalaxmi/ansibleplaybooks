@@ -1,0 +1,21 @@
+---
+- hosts: 192.168.56.2
+  become: true
+  vars:
+    comapany: dell
+    person: jenkins
+    phone: 123456789
+  tasks:
+   - name: to install httpd
+      yum:
+       name: httpd
+       state: present
+   -  name: copy files
+      copy: 
+        src: index.html
+        dest: /var/wwww/html/index.html       
+  handlers:
+   - name: restart service
+     service:
+       name: httpd
+       state: restarted

@@ -63,5 +63,12 @@
        state: started
        daemon_reload: yes
        enabled: yes
+   - name: init password nexus
+     shell: cat /usr/local/sonatype-work/nexus3/admin.password
+     changed_when: false
+     register: result
+   - name: print init password jenkins
+     debug:
+       var: result.stdout
 
 

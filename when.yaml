@@ -1,0 +1,29 @@
+---
+- hosts: all
+  become: true
+  tasks:
+   - name: install apache2 
+     apt: name=apache2 state=present
+     when: ansible_os_family == 'Debian'
+
+
+
+
+-------------------------------------------------------------------
+     how to encrypt ansible playbook
+
+     ansible-vault encrypt playbookname.yaml
+
+     how to view encrypted playbook
+
+     ansible-vault view playbookname.yaml
+
+     how to edit encrypted playbook
+     ansible-vault edit playbookname.yaml
+
+     how to run encrypted playbook
+
+     ansible-playbook playbookname --ask-vault-password
+
+     how to decrypt playbook
+     ansible-vault decrypt playbookname.yaml

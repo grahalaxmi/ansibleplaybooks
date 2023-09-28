@@ -27,3 +27,6 @@
 
      how to decrypt playbook
      ansible-vault decrypt playbookname.yaml
+
+     how to create to ansible vault newplaybook
+     ansible-vault create playbook.yaml
